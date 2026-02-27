@@ -1,4 +1,5 @@
 import { FileText, Users, Video, Award, Briefcase, MessageSquare } from "lucide-react";
+import { useInView } from "@/hooks/useInView";
 
 const bonuses = [
   { icon: FileText, title: "Career Toolkit PDF", description: "Comprehensive resource guide for continued self-learning" },
@@ -10,24 +11,36 @@ const bonuses = [
 ];
 
 const BonusSection = () => {
-  return (
-    <section className="py-24 lg:py-32 px-6 lg:px-12 border-t border-divider">
-      <div className="container mx-auto max-w-5xl">
-        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          BONUS DELIVERABLES
-        </p>
-        <h2 className="text-4xl md:text-5xl font-semibold mb-16">
-          What You Also Get
-        </h2>
+  const { ref, isInView } = useInView(0.1);
 
-        <div className="grid md:grid-cols-2 gap-6">
+  return (
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-20 lg:py-28 px-6 lg:px-12 bg-surface border-t border-divider"
+    >
+      <div className="container mx-auto max-w-5xl">
+        <div className={`mb-14 reveal ${isInView ? "revealed" : ""}`}>
+          <p className="text-xs tracking-[0.3em] uppercase text-accent font-medium mb-3">
+            BONUS DELIVERABLES
+          </p>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold">
+            What You Also Get
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
           {bonuses.map((bonus, i) => {
             const Icon = bonus.icon;
             return (
-              <div key={i} className="bg-surface px-6 py-6 flex items-start gap-4">
-                <Icon size={20} className="text-muted-foreground mt-0.5 shrink-0" strokeWidth={1.5} />
+              <div
+                key={i}
+                className={`bg-background border border-divider rounded-xl px-6 py-5 flex items-start gap-4 transition-all hover:shadow-md hover:border-accent/20 reveal-scale ${isInView ? `revealed stagger-${i + 1}` : ""}`}
+              >
+                <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center shrink-0">
+                  <Icon size={16} className="text-accent" />
+                </div>
                 <div>
-                  <p className="text-sm font-medium mb-1">{bonus.title}</p>
+                  <p className="text-sm font-semibold mb-0.5">{bonus.title}</p>
                   <p className="text-xs text-muted-foreground leading-relaxed">{bonus.description}</p>
                 </div>
               </div>

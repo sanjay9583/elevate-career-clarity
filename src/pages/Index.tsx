@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import TrustStrip from "@/components/TrustStrip";
 import BootcampStructure from "@/components/BootcampStructure";
 import SpeakersSection from "@/components/SpeakersSection";
 import AboutSection from "@/components/AboutSection";
@@ -15,6 +16,7 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
+        <TrustStrip />
         <BootcampStructure />
         <SpeakersSection />
         <AboutSection />
@@ -28,7 +30,7 @@ const Index = () => {
       {/* Floating Enroll Button */}
       <a
         href="#pricing"
-        className="fixed bottom-6 right-6 z-50 bg-primary text-primary-foreground px-8 py-4 text-sm font-medium tracking-wide shadow-lg rounded-full hover:opacity-90 transition-opacity"
+        className="fixed bottom-6 right-6 z-50 bg-accent text-accent-foreground px-7 py-3.5 text-sm font-semibold tracking-wide shadow-lg rounded-full hover:opacity-90 transition-all hover:shadow-xl pulse-cta"
       >
         Enroll Now – ₹999
       </a>

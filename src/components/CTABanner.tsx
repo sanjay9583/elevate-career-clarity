@@ -1,15 +1,27 @@
+import { useInView } from "@/hooks/useInView";
+
 const CTABanner = () => {
+  const { ref, isInView } = useInView(0.15);
+
   return (
-    <section className="bg-primary text-primary-foreground py-16 lg:py-20 px-6 lg:px-12">
-      <div className="container mx-auto max-w-3xl text-center">
-        <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold leading-tight mb-8">
-          Stop Guessing Your Career.<br />Start Building It.
+    <section
+      ref={ref as React.RefObject<HTMLElement>}
+      className="bg-foreground text-background py-20 lg:py-28 px-6 lg:px-12"
+    >
+      <div className={`container mx-auto max-w-3xl text-center reveal ${isInView ? "revealed" : ""}`}>
+        <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold leading-tight mb-4">
+          Stop Guessing Your Career.
+          <br />
+          Start Building It.
         </h2>
+        <p className="text-background/60 text-sm mb-10 max-w-lg mx-auto">
+          Join 4,00,000+ students who trust CollegeHive. Your 5-day career clarity journey starts here.
+        </p>
         <a
           href="#pricing"
-          className="inline-block bg-primary-foreground text-primary px-12 py-4 text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-opacity"
+          className="inline-flex items-center justify-center bg-accent text-accent-foreground px-12 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
         >
-          Enroll Now
+          Enroll Now — ₹999
         </a>
       </div>
     </section>

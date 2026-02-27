@@ -4,6 +4,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useInView } from "@/hooks/useInView";
 
 const faqs = [
   {
@@ -49,28 +50,38 @@ const faqs = [
 ];
 
 const FAQSection = () => {
-  return (
-    <section id="faqs" className="py-24 lg:py-32 px-6 lg:px-12 border-t border-divider">
-      <div className="container mx-auto max-w-3xl">
-        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-4">
-          FAQS
-        </p>
-        <h2 className="text-4xl md:text-5xl font-semibold mb-16">
-          Common Questions
-        </h2>
+  const { ref, isInView } = useInView(0.1);
 
-        <Accordion type="single" collapsible className="w-full">
-          {faqs.map((faq, i) => (
-            <AccordionItem key={i} value={`faq-${i}`} className="border-b border-divider py-2">
-              <AccordionTrigger className="text-sm font-medium tracking-wide hover:no-underline py-5 text-left">
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+  return (
+    <section
+      id="faqs"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-20 lg:py-28 px-6 lg:px-12 border-t border-divider"
+    >
+      <div className="container mx-auto max-w-3xl">
+        <div className={`mb-12 reveal ${isInView ? "revealed" : ""}`}>
+          <p className="text-xs tracking-[0.3em] uppercase text-accent font-medium mb-3">
+            FAQS
+          </p>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold">
+            Common Questions
+          </h2>
+        </div>
+
+        <div className={`reveal ${isInView ? "revealed stagger-1" : ""}`}>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`faq-${i}`} className="border-b border-divider py-1">
+                <AccordionTrigger className="text-sm font-medium tracking-wide hover:no-underline py-5 text-left hover:text-accent transition-colors">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-muted-foreground leading-relaxed pb-5">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+        </div>
       </div>
     </section>
   );

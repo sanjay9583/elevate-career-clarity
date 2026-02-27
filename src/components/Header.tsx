@@ -1,78 +1,31 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logoFull from "@/assets/logo-full.png";
-
-const navLinks = [
-  { label: "Bootcamp Overview", href: "#bootcamp-overview" },
-  { label: "Speakers", href: "#speakers" },
-  { label: "About", href: "#about" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQs", href: "#faqs" },
-  { label: "Careers", href: "#careers" },
-];
+import { useInView } from "@/hooks/useInView";
 
 const Header = () => {
-  const [mobileOpen, setMobileOpen] = useState(false);
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-divider">
-      <div className="h-[2px] bg-foreground" />
       <div className="container mx-auto flex items-center justify-between py-4 px-6 lg:px-12">
-        <a href="#" className="flex items-center">
-          <img src={logoFull} alt="CollegeHive" className="h-16 w-auto" />
+        <a href="#" className="flex items-center gap-2.5">
+          <svg viewBox="20 50 130 130" className="h-9 w-9" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="85" cy="75" r="14" fill="currentColor" />
+            <path d="M 40 90 Q 60 90 85 105 Q 110 90 130 90 L 130 145 Q 110 145 85 160 Q 60 145 40 145 Z" fill="currentColor" />
+          </svg>
+          <span className="text-lg font-bold tracking-tight">CollegeHive</span>
         </a>
 
-        {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
+          <a href="#bootcamp-overview" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Overview</a>
+          <a href="#speakers" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Speakers</a>
+          <a href="#about" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">About</a>
+          <a href="#pricing" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
+          <a href="#faqs" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">FAQs</a>
           <a
             href="#pricing"
-            className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-opacity"
+            className="bg-accent text-accent-foreground px-6 py-2.5 text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-md"
           >
-            SIGN UP
+            Enroll Now
           </a>
         </nav>
-
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden text-foreground"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
       </div>
-
-      {/* Mobile Nav */}
-      {mobileOpen && (
-        <nav className="lg:hidden border-t border-divider bg-background px-6 py-6 flex flex-col gap-4">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <a
-            href="#pricing"
-            onClick={() => setMobileOpen(false)}
-            className="bg-primary text-primary-foreground px-6 py-2.5 text-sm font-medium tracking-wide text-center rounded-full hover:opacity-90 transition-opacity"
-          >
-            SIGN UP
-          </a>
-        </nav>
-      )}
     </header>
   );
 };

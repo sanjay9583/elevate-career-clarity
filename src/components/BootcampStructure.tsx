@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useInView } from "@/hooks/useInView";
 
 const days = [
   {
@@ -74,27 +75,35 @@ const days = [
 
 const BootcampStructure = () => {
   const [activeDay, setActiveDay] = useState<number | null>(null);
+  const { ref, isInView } = useInView(0.1);
 
   return (
-    <section className="py-16 lg:py-20 px-6 lg:px-12 border-t border-divider">
+    <section
+      id="program-structure"
+      ref={ref as React.RefObject<HTMLElement>}
+      className="py-20 lg:py-28 px-6 lg:px-12 border-t border-divider"
+    >
       <div className="container mx-auto max-w-4xl">
-        <p className="text-xs tracking-[0.3em] uppercase text-muted-foreground mb-3">
-          PROGRAM STRUCTURE
-        </p>
-        <h2 className="text-3xl md:text-4xl font-semibold mb-8">
-          Five Days That<br />Change Everything
-        </h2>
+        <div className={`reveal ${isInView ? "revealed" : ""}`}>
+          <p className="text-xs tracking-[0.3em] uppercase text-accent font-medium mb-3">
+            PROGRAM STRUCTURE
+          </p>
+          <h2 className="font-serif text-3xl md:text-5xl font-bold mb-10">
+            Five Days That
+            <br />
+            Change Everything
+          </h2>
+        </div>
 
-        <div className="flex flex-wrap gap-2 mb-8">
+        <div className={`flex flex-wrap gap-2 mb-10 reveal ${isInView ? "revealed stagger-1" : ""}`}>
           {days.map((day, i) => (
             <button
               key={i}
               onClick={() => setActiveDay(activeDay === i ? null : i)}
-              className={`px-5 py-2.5 text-xs tracking-[0.2em] uppercase font-medium transition-colors border rounded-full ${
-                activeDay === i
-                  ? "bg-primary text-primary-foreground border-primary"
+              className={`px-5 py-2.5 text-xs tracking-[0.15em] uppercase font-medium transition-all border rounded-full ${activeDay === i
+                  ? "bg-foreground text-background border-foreground"
                   : "bg-background text-muted-foreground border-divider hover:border-foreground hover:text-foreground"
-              }`}
+                }`}
             >
               {day.day}
             </button>
@@ -102,13 +111,16 @@ const BootcampStructure = () => {
         </div>
 
         {activeDay !== null && (
-          <div className="border-t border-divider pt-10">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-6">
+          <div className="border border-divider rounded-xl p-8 bg-surface/50">
+            <h3 className="font-serif text-2xl md:text-3xl font-bold mb-6">
               {days[activeDay].title}
             </h3>
             <ul className="space-y-3">
               {days[activeDay].topics.map((topic, j) => (
-                <li key={j} className="text-muted-foreground text-sm leading-relaxed pl-4 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-muted-foreground/30 before:rounded-full">
+                <li
+                  key={j}
+                  className="text-muted-foreground text-sm leading-relaxed pl-5 relative before:content-[''] before:absolute before:left-0 before:top-2 before:w-1.5 before:h-1.5 before:bg-accent/50 before:rounded-full"
+                >
                   {topic}
                 </li>
               ))}
