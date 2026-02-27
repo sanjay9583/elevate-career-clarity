@@ -4,6 +4,7 @@ import TrustStrip from "@/components/TrustStrip";
 import BootcampStructure from "@/components/BootcampStructure";
 import SpeakersSection from "@/components/SpeakersSection";
 import AboutSection from "@/components/AboutSection";
+import PastEventsSection from "@/components/PastEventsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import BonusSection from "@/components/BonusSection";
@@ -20,6 +21,7 @@ const Index = () => {
         <BootcampStructure />
         <SpeakersSection />
         <AboutSection />
+        <PastEventsSection />
         <PricingSection />
         <FAQSection />
         <BonusSection />

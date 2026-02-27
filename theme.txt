@@ -1,0 +1,216 @@
+═══════════════════════════════════════════════════════════════
+                 COLLEGEHIVE — BRAND THEME
+                 Design System Reference
+═══════════════════════════════════════════════════════════════
+
+
+──────────────────────────────────────
+1. LOGO
+──────────────────────────────────────
+
+Logo SVG (full, with text):      /public/logo.svg
+Favicon SVG (icon only):         /public/favicon.svg
+Icon shape:                      Bee/hive icon — circle head + V-body
+Icon color:                      #000000 (dark mode: #FFFFFF)
+Logotype font:                   Arial, Helvetica, sans-serif
+Logotype weight:                 900 (Black)
+Logotype letter-spacing:         -1px
+
+
+──────────────────────────────────────
+2. COLOR PALETTE (HSL)
+──────────────────────────────────────
+
+LIGHT MODE:
+┌────────────────────────┬──────────────────┬────────────────────┐
+│ Token                  │ HSL Value        │ Hex Equivalent     │
+├────────────────────────┼──────────────────┼────────────────────┤
+│ --background           │ 40 20% 99%       │ #FDFCFB            │
+│ --foreground           │ 30 10% 10%       │ #1C1A18            │
+│ --card                 │ 40 15% 98%       │ #FAF9F7            │
+│ --primary              │ 30 8% 12%        │ #201E1C            │
+│ --primary-foreground   │ 40 20% 98%       │ #FBF9F6            │
+│ --secondary            │ 35 12% 94%       │ #F2F0ED            │
+│ --muted                │ 35 10% 94%       │ #F1EFEC            │
+│ --muted-foreground     │ 30 5% 44%        │ #736F6B            │
+│ --accent               │ 16 65% 48%       │ #C96832            │ ← BRAND ACCENT
+│ --accent-foreground    │ 0 0% 100%        │ #FFFFFF            │
+│ --surface              │ 35 15% 96%       │ #F6F4F1            │
+│ --divider              │ 35 10% 88%       │ #E3E0DC            │
+│ --border               │ 35 12% 89%       │ #E5E2DE            │
+│ --ring                 │ 16 65% 48%       │ #C96832            │
+│ --radius               │ 0.5rem           │ 8px                │
+└────────────────────────┴──────────────────┴────────────────────┘
+
+DARK MODE:
+┌────────────────────────┬──────────────────┬────────────────────┐
+│ --background           │ 30 8% 7%         │ #131211            │
+│ --foreground           │ 35 12% 95%       │ #F3F1EE            │
+│ --primary              │ 16 65% 55%       │ #D47A42            │
+│ --accent               │ 16 65% 48%       │ #C96832            │
+│ --surface              │ 30 8% 12%        │ #201E1C            │
+│ --divider              │ 30 8% 18%        │ #312E2B            │
+└────────────────────────┴──────────────────┴────────────────────┘
+
+
+──────────────────────────────────────
+3. ACCENT COLOR — THE STAR
+──────────────────────────────────────
+
+Name:            Terracotta / Warm Burnt Coral
+HSL:             16, 65%, 48%
+Hex:             #C96832
+RGB:             201, 104, 50
+Used for:        CTA buttons, badges, section labels,
+                 check icons, ring focus, hover accents,
+                 floating FAB
+
+This is NOT a typical AI blue/purple. It's warm,
+earthy, Indian-feeling, and distinctive.
+
+
+──────────────────────────────────────
+4. TYPOGRAPHY
+──────────────────────────────────────
+
+BODY FONT:
+  Family:          Inter
+  Import:          fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700
+  Weights used:    300 (light), 400 (regular), 500 (medium), 600 (semibold), 700 (bold)
+  Usage:           All body text, nav links, buttons, form labels
+
+DISPLAY / HEADING FONT:
+  Family:          Source Serif 4
+  Import:          fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400
+  Weights used:    400 (regular), 600 (semibold), 700 (bold), 400 italic
+  Usage:           Section h2/h3 headings, hero headline, CTA headlines
+  Tailwind class:  font-serif
+
+TAILWIND CONFIG:
+  fontFamily: {
+    sans: ["'Inter'", "system-ui", "sans-serif"],
+    serif: ["'Source Serif 4'", "Georgia", "serif"],
+  }
+
+
+──────────────────────────────────────
+5. SPACING & LAYOUT
+──────────────────────────────────────
+
+Max content width:     max-w-5xl (1024px) for most sections
+Narrow content:        max-w-4xl (896px) for text-heavy sections
+Narrow card:           max-w-3xl (768px) for pricing/FAQ
+
+Section padding:       py-20 lg:py-28 px-6 lg:px-12
+Section label:         text-xs tracking-[0.3em] uppercase text-accent font-medium mb-3
+Section heading:       font-serif text-3xl md:text-5xl font-bold
+
+Border radius:         0.5rem (--radius), rounded-xl for cards, rounded-full for buttons/badges
+
+
+──────────────────────────────────────
+6. SECTION PATTERN
+──────────────────────────────────────
+
+Alternate backgrounds:
+  • White sections:      bg-background
+  • Tinted sections:     bg-surface
+  • Dark sections:       bg-foreground (for CTA/footer)
+
+Every section starts with:
+  <p class="text-xs tracking-[0.3em] uppercase text-accent font-medium mb-3">
+    SECTION LABEL
+  </p>
+  <h2 class="font-serif text-3xl md:text-5xl font-bold mb-10">
+    Section Heading
+  </h2>
+
+
+──────────────────────────────────────
+7. BUTTONS
+──────────────────────────────────────
+
+PRIMARY CTA:
+  bg-accent text-accent-foreground px-8 py-4 text-sm font-semibold
+  tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg
+
+SECONDARY:
+  border border-divider text-foreground px-8 py-4 text-sm font-medium
+  tracking-wide rounded-full hover:bg-surface transition-all
+
+NAV CTA:
+  bg-accent text-accent-foreground px-6 py-2.5 text-sm font-medium
+  tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-md
+
+FLOATING FAB:
+  fixed bottom-6 right-6 z-50 bg-accent text-accent-foreground
+  px-7 py-3.5 text-sm font-semibold tracking-wide shadow-lg
+  rounded-full pulse-cta
+
+
+──────────────────────────────────────
+8. CARDS
+──────────────────────────────────────
+
+Standard card:
+  bg-background border border-divider rounded-xl p-6
+  transition-all hover:shadow-lg hover:-translate-y-1 hover:border-accent/30
+
+Surface card (for inset emphasis):
+  bg-surface/50 border border-divider rounded-xl p-8
+
+Bonus/feature card:
+  bg-background border border-divider rounded-xl px-6 py-5
+  hover:shadow-md hover:border-accent/20
+
+
+──────────────────────────────────────
+9. ANIMATIONS
+──────────────────────────────────────
+
+SCROLL REVEAL (CSS + IntersectionObserver):
+  • .reveal          → translateY(32px) → 0, opacity 0 → 1
+  • .reveal-scale    → scale(0.95) → 1, opacity 0 → 1
+  • .reveal-fade     → opacity 0 → 1
+  • .stagger-1..6    → animation-delay 0.05s increments
+  • Easing:          cubic-bezier(0.22, 1, 0.36, 1) — "out expo"
+  • Duration:        0.6–0.8s
+  • Trigger:         once, threshold 0.1–0.2
+
+CTA PULSE:
+  .pulse-cta → box-shadow pulse with accent color, 2.5s infinite
+
+BADGE DOT:
+  animate-pulse (Tailwind built-in) on the bootcamp badge dot
+
+
+──────────────────────────────────────
+10. ICON SYSTEM
+──────────────────────────────────────
+
+Library:          Lucide React (lucide-react)
+Size:             12–16px for inline, inside 9×9 (w-9 h-9) tinted containers
+Tint pattern:     bg-accent/10 container + text-accent icon
+Check marks:      Check icon, text-accent, size 15
+
+Speaker avatars (when no photo):
+  Initials in 16×16 (w-16 h-16) circle
+  Each speaker gets a unique soft color:
+    amber-100/amber-700, rose-100/rose-700, blue-100/blue-700,
+    emerald-100/emerald-700, violet-100/violet-700, orange-100/orange-700
+
+
+──────────────────────────────────────
+11. CSS CUSTOM PROPERTIES FILE
+──────────────────────────────────────
+
+File: src/index.css
+
+This is the single source of truth for all colors.
+Every component uses hsl(var(--token)) via Tailwind,
+so changing the CSS variables changes the entire site.
+
+
+═══════════════════════════════════════════════════════════════
+  Created: Feb 28, 2026 — CollegeHive Brand System v1.0
+═══════════════════════════════════════════════════════════════
