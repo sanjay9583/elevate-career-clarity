@@ -2,12 +2,12 @@ import { useInView } from "@/hooks/useInView";
 import { Linkedin } from "lucide-react";
 
 const speakers = [
-  { name: "Arjun Mehta", designation: "Product Lead, Google", initials: "AM", color: "bg-amber-100 text-amber-700" },
-  { name: "Priya Sharma", designation: "Senior HR, Deloitte", initials: "PS", color: "bg-rose-100 text-rose-700" },
-  { name: "Rohan Kapoor", designation: "Founding Engineer, Razorpay", initials: "RK", color: "bg-blue-100 text-blue-700" },
-  { name: "Sneha Iyer", designation: "Marketing Director, Swiggy", initials: "SI", color: "bg-emerald-100 text-emerald-700" },
-  { name: "Vikram Desai", designation: "Campus Recruiter, TCS", initials: "VD", color: "bg-violet-100 text-violet-700" },
-  { name: "Ananya Rao", designation: "Recently Placed, Amazon", initials: "AR", color: "bg-orange-100 text-orange-700" },
+  { name: "Arjun Mehta", designation: "Product Lead, Google", day: "Day 1", initials: "AM", color: "bg-amber-100 text-amber-700" },
+  { name: "Ruhan Naqash", designation: "Imarticus Learning", day: "Day 2", photo: "/speakers/ruhan.png", linkedin: "https://www.linkedin.com/in/ruhanmadninaqash/", color: "bg-sky-100 text-sky-700" },
+  { name: "Nancy", designation: "IIFT Graduate", day: "Day 3", photo: "/speakers/nancy.png", linkedin: "https://www.linkedin.com/in/nancy-723231216/", color: "bg-rose-100 text-rose-700" },
+  { name: "Sneha Iyer", designation: "Marketing Director, Swiggy", day: "Day 4", initials: "SI", color: "bg-emerald-100 text-emerald-700" },
+  { name: "Vikram Desai", designation: "Campus Recruiter, TCS", day: "Day 5", initials: "VD", color: "bg-violet-100 text-violet-700" },
+  { name: "Priya Sharma", designation: "Senior HR, Deloitte", day: "Panel", initials: "PS", color: "bg-orange-100 text-orange-700" },
 ];
 
 const SpeakersSection = () => {
@@ -29,20 +29,43 @@ const SpeakersSection = () => {
           </h2>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {speakers.map((speaker, i) => (
             <div
               key={i}
               className={`group reveal-scale ${isInView ? `revealed stagger-${i + 1}` : ""}`}
             >
-              <div className="bg-background border border-divider rounded-xl p-6 transition-all hover:shadow-lg hover:-translate-y-1 hover:border-accent/30">
-                <div className={`w-16 h-16 rounded-full ${speaker.color} flex items-center justify-center text-lg font-bold mb-4`}>
-                  {speaker.initials}
+              <div className="bg-background border border-divider rounded-2xl p-6 md:p-8 transition-all hover:shadow-xl hover:-translate-y-1.5 hover:border-accent/30 text-center">
+                {/* Day badge */}
+                <span className="inline-block text-[10px] tracking-[0.2em] uppercase text-accent bg-accent/8 px-3 py-1 rounded-full font-semibold mb-5">
+                  {speaker.day}
+                </span>
+
+                {/* Avatar */}
+                <div className="flex justify-center mb-5">
+                  {speaker.photo ? (
+                    <img
+                      src={speaker.photo}
+                      alt={speaker.name}
+                      className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-[3px] border-accent/20 shadow-md transition-transform duration-300 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className={`w-28 h-28 md:w-32 md:h-32 rounded-full ${speaker.color} flex items-center justify-center text-3xl md:text-4xl font-bold shadow-inner`}>
+                      {speaker.initials}
+                    </div>
+                  )}
                 </div>
-                <p className="font-semibold text-sm tracking-wide mb-0.5">{speaker.name}</p>
-                <p className="text-xs text-muted-foreground mb-3">{speaker.designation}</p>
-                <a href="#" className="inline-flex items-center gap-1 text-xs text-accent hover:underline">
-                  <Linkedin size={12} />
+
+                {/* Info */}
+                <p className="font-semibold text-base tracking-wide mb-1">{speaker.name}</p>
+                <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{speaker.designation}</p>
+                <a
+                  href={speaker.linkedin || "#"}
+                  target={speaker.linkedin ? "_blank" : undefined}
+                  rel={speaker.linkedin ? "noopener noreferrer" : undefined}
+                  className="inline-flex items-center gap-1.5 text-xs text-accent font-medium hover:underline transition-colors"
+                >
+                  <Linkedin size={13} />
                   LinkedIn
                 </a>
               </div>
@@ -55,3 +78,4 @@ const SpeakersSection = () => {
 };
 
 export default SpeakersSection;
+
