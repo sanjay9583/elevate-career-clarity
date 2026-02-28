@@ -9,6 +9,7 @@ import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import BonusSection from "@/components/BonusSection";
 import CTABanner from "@/components/CTABanner";
+import EnrollFormSection from "@/components/EnrollFormSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -25,13 +26,14 @@ const Index = () => {
         <PricingSection />
         <FAQSection />
         <BonusSection />
+        <EnrollFormSection />
         <CTABanner />
       </main>
       <Footer />
 
       {/* Floating Enroll Button */}
       <a
-        href="#pricing"
+        href="#enroll"
         className="fixed bottom-6 right-6 z-50 bg-accent text-accent-foreground px-7 py-3.5 text-sm font-semibold tracking-wide shadow-lg rounded-full hover:opacity-90 transition-all hover:shadow-xl pulse-cta"
       >
         Enroll Now – ₹999

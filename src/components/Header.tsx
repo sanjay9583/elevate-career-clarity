@@ -19,7 +19,7 @@ const Header = () => {
           <a href="#pricing" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
           <a href="#faqs" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">FAQs</a>
           <a
-            href="#pricing"
+            href="#enroll"
             className="bg-accent text-accent-foreground px-6 py-2.5 text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-md"
           >
             Enroll Now

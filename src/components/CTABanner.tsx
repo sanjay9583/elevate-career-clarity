@@ -18,7 +18,7 @@ const CTABanner = () => {
           Join 4,00,000+ students who trust CollegeHive. Your 5-day career clarity journey starts here.
         </p>
         <a
-          href="#pricing"
+          href="#enroll"
           className="inline-flex items-center justify-center bg-accent text-accent-foreground px-12 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
         >
           Enroll Now — ₹999

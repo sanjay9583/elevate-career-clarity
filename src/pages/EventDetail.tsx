@@ -178,7 +178,7 @@ const EventDetail = () => {
                         Our next bootcamp cohort is opening soon. Be among the first to know.
                     </p>
                     <Link
-                        to="/#pricing"
+                        to="/#enroll"
                         className="inline-flex items-center justify-center bg-accent text-accent-foreground px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
                     >
                         Enroll Now — ₹999
