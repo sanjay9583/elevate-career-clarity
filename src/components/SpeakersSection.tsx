@@ -5,7 +5,7 @@ const speakers = [
   { name: "Arjun Mehta", designation: "Product Lead, Google", day: "Day 1", initials: "AM", color: "bg-amber-100 text-amber-700" },
   { name: "Ruhan Naqash", designation: "Imarticus Learning", day: "Day 2", photo: "/speakers/ruhan.png", linkedin: "https://www.linkedin.com/in/ruhanmadninaqash/", color: "bg-sky-100 text-sky-700" },
   { name: "Nancy", designation: "IIFT Graduate", day: "Day 3", photo: "/speakers/nancy.png", linkedin: "https://www.linkedin.com/in/nancy-723231216/", color: "bg-rose-100 text-rose-700" },
-  { name: "Sneha Iyer", designation: "Marketing Director, Swiggy", day: "Day 4", initials: "SI", color: "bg-emerald-100 text-emerald-700" },
+  { name: "Aman Thoyaj Krishna", designation: "Marketing Lead, Reo.dev", day: "Speaker", photo: "/speakers/aman.png", color: "bg-emerald-100 text-emerald-700" },
   { name: "Vikram Desai", designation: "Campus Recruiter, TCS", day: "Day 5", initials: "VD", color: "bg-violet-100 text-violet-700" },
   { name: "Nithya K", designation: "HR, MindMentor", day: "HR Speaker", linkedin: "https://www.linkedin.com/in/nithyak-mindmentorzhr/", initials: "NK", color: "bg-orange-100 text-orange-700" },
 ];
