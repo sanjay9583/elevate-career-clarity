@@ -177,12 +177,14 @@ const EventDetail = () => {
                     <p className="text-background/60 text-sm mb-8">
                         Our next bootcamp cohort is opening soon. Be among the first to know.
                     </p>
-                    <Link
-                        to="/#enroll"
+                    <a
+                        href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="inline-flex items-center justify-center bg-accent text-accent-foreground px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
                     >
                         Enroll Now — ₹999
-                    </Link>
+                    </a>
                 </div>
             </section>
 

@@ -42,7 +42,9 @@ const HeroSection = () => {
         {/* CTAs */}
         <div className={`flex flex-col sm:flex-row gap-4 mb-14 reveal ${isInView ? "revealed stagger-3" : ""}`}>
           <a
-            href="#enroll"
+            href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-accent text-accent-foreground px-8 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
           >
             Enroll Now — ₹999

@@ -2,12 +2,10 @@ import { useInView } from "@/hooks/useInView";
 import { Linkedin } from "lucide-react";
 
 const speakers = [
-  { name: "Arjun Mehta", designation: "Product Lead, Google", day: "Day 1", initials: "AM", color: "bg-amber-100 text-amber-700" },
   { name: "Ruhan Naqash", designation: "Imarticus Learning", day: "Day 2", photo: "/speakers/ruhan.png", linkedin: "https://www.linkedin.com/in/ruhanmadninaqash/", color: "bg-sky-100 text-sky-700" },
   { name: "Nancy", designation: "IIFT Graduate", day: "Day 3", photo: "/speakers/nancy.png", linkedin: "https://www.linkedin.com/in/nancy-723231216/", color: "bg-rose-100 text-rose-700" },
-  { name: "Aman Thoyaj Krishna", designation: "Marketing Lead, Reo.dev", day: "Speaker", photo: "/speakers/aman.png", color: "bg-emerald-100 text-emerald-700" },
-  { name: "Vikram Desai", designation: "Campus Recruiter, TCS", day: "Day 5", initials: "VD", color: "bg-violet-100 text-violet-700" },
-  { name: "Nithya K", designation: "HR, MindMentor", day: "HR Speaker", linkedin: "https://www.linkedin.com/in/nithyak-mindmentorzhr/", initials: "NK", color: "bg-orange-100 text-orange-700" },
+  { name: "Aman Thoyaj Krishna", designation: "Marketing Lead, Reo.dev", day: "Speaker", photo: "/speakers/aman.png", linkedin: "https://www.linkedin.com/in/amanthoyaj/", color: "bg-emerald-100 text-emerald-700" },
+  { name: "Nithya K", designation: "HR, MindMentor", day: "HR Speaker", photo: "/speakers/nithya.png", linkedin: "https://www.linkedin.com/in/nithyak-mindmentorzhr/", color: "bg-orange-100 text-orange-700" },
 ];
 
 const SpeakersSection = () => {
@@ -43,17 +41,11 @@ const SpeakersSection = () => {
 
                 {/* Avatar */}
                 <div className="flex justify-center mb-5">
-                  {speaker.photo ? (
-                    <img
-                      src={speaker.photo}
-                      alt={speaker.name}
-                      className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-[3px] border-accent/20 shadow-md transition-transform duration-300 group-hover:scale-105"
-                    />
-                  ) : (
-                    <div className={`w-28 h-28 md:w-32 md:h-32 rounded-full ${speaker.color} flex items-center justify-center text-3xl md:text-4xl font-bold shadow-inner`}>
-                      {speaker.initials}
-                    </div>
-                  )}
+                  <img
+                    src={speaker.photo}
+                    alt={speaker.name}
+                    className="w-28 h-28 md:w-32 md:h-32 rounded-full object-cover border-[3px] border-accent/20 shadow-md transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
 
                 {/* Info */}

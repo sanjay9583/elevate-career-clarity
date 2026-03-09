@@ -4,12 +4,11 @@ import TrustStrip from "@/components/TrustStrip";
 import BootcampStructure from "@/components/BootcampStructure";
 import SpeakersSection from "@/components/SpeakersSection";
 import AboutSection from "@/components/AboutSection";
-import PastEventsSection from "@/components/PastEventsSection";
+// import PastEventsSection from "@/components/PastEventsSection";
 import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import BonusSection from "@/components/BonusSection";
 import CTABanner from "@/components/CTABanner";
-import EnrollFormSection from "@/components/EnrollFormSection";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,18 +21,19 @@ const Index = () => {
         <BootcampStructure />
         <SpeakersSection />
         <AboutSection />
-        <PastEventsSection />
+        {/* <PastEventsSection /> */}
         <PricingSection />
         <FAQSection />
         <BonusSection />
-        <EnrollFormSection />
         <CTABanner />
       </main>
       <Footer />
 
       {/* Floating Enroll Button */}
       <a
-        href="#enroll"
+        href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+        target="_blank"
+        rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-accent text-accent-foreground px-7 py-3.5 text-sm font-semibold tracking-wide shadow-lg rounded-full hover:opacity-90 transition-all hover:shadow-xl pulse-cta"
       >
         Enroll Now – ₹999
