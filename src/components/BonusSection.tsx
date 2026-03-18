@@ -1,4 +1,4 @@
-import { FileText, Users, Video, Award, Briefcase, MessageSquare } from "lucide-react";
+import { FileText, Users, Video, Award, Briefcase } from "lucide-react";
 import { useInView } from "@/hooks/useInView";
 
 const bonuses = [
@@ -7,7 +7,7 @@ const bonuses = [
   { icon: Users, title: "Community Access", description: "Join our exclusive student and alumni network" },
   { icon: Award, title: "Certificate of Completion", description: "Verified certificate from CollegeHive" },
   { icon: Briefcase, title: "Resume Template Pack", description: "Industry-approved resume and cover letter templates" },
-  { icon: MessageSquare, title: "1-on-1 Doubt Session", description: "Post-bootcamp doubt clearing with mentors" },
+
 ];
 
 const BonusSection = () => {

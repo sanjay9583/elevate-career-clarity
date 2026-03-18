@@ -65,7 +65,7 @@ const MarketingBootcampSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center gap-2 border border-divider text-foreground px-8 py-4 text-sm font-medium tracking-wide rounded-full hover:bg-surface transition-all"
           >
-            Enroll & Pay Directly
+            Enroll Now
             <ArrowRight size={14} />
           </a>
         </div>
