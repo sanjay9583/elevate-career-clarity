@@ -28,7 +28,7 @@ const MarketingBootcampSection = () => {
 
         <div className={`reveal ${isInView ? "revealed stagger-1" : ""}`}>
           <p className="text-muted-foreground leading-[1.9] text-base md:text-lg max-w-3xl mb-8">
-            Most students pick marketing without really knowing what it is. Not the Instagram version — but the actual job. Over 5 days, CollegeHive's Marketing Bootcamp puts you in the room with industry professionals, recent hires, and HR managers who have made the decisions.
+            Most students pick marketing without really knowing what it is. Not the Instagram version, but the actual job. Over 5 days, CollegeHive's Marketing Bootcamp puts you in the room with industry professionals, recent hires, and HR managers who have made the decisions.
           </p>
 
           <p className="text-muted-foreground leading-[1.9] text-base md:text-lg max-w-3xl mb-10">

@@ -6,7 +6,7 @@ import MarketingBootcampSection from "@/components/MarketingBootcampSection";
 import SpeakersSection from "@/components/SpeakersSection";
 import AboutSection from "@/components/AboutSection";
 // import PastEventsSection from "@/components/PastEventsSection";
-import PricingSection from "@/components/PricingSection";
+// import PricingSection from "@/components/PricingSection";
 import FAQSection from "@/components/FAQSection";
 import BonusSection from "@/components/BonusSection";
 import CTABanner from "@/components/CTABanner";
@@ -24,7 +24,7 @@ const Index = () => {
         <SpeakersSection />
         <AboutSection />
         {/* <PastEventsSection /> */}
-        <PricingSection />
+        {/* <PricingSection /> */}
         <FAQSection />
         <BonusSection />
         <CTABanner />
@@ -33,12 +33,12 @@ const Index = () => {
 
       {/* Floating Enroll Button */}
       <a
-        href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+        href="https://forms.zohopublic.in/saimaneash437gm1/form/PaymentForm/formperma/KvnhScsHQgA5t7CpZjfcy-4eMuR3R8ofNyVnYWeBbmk"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-accent text-accent-foreground px-7 py-3.5 text-sm font-semibold tracking-wide shadow-lg rounded-full hover:opacity-90 transition-all hover:shadow-xl pulse-cta"
       >
-        Enroll Now – ₹999
+        Enroll Now
       </a>
     </div>
   );

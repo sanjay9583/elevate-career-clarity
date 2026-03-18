@@ -36,18 +36,18 @@ const HeroSection = () => {
 
         {/* Subtext */}
         <p className={`text-lg md:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10 reveal ${isInView ? "revealed stagger-2" : ""}`}>
-          Structured exposure to industry experts, HRs, and recently placed graduates — across marketing, finance, consulting, HR & more.
+          Structured exposure to industry experts, HRs, and recently placed graduates across marketing, finance, consulting, HR & more.
         </p>
 
         {/* CTAs */}
         <div className={`flex flex-col sm:flex-row gap-4 mb-14 reveal ${isInView ? "revealed stagger-3" : ""}`}>
           <a
-            href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+            href="https://forms.zohopublic.in/saimaneash437gm1/form/PaymentForm/formperma/KvnhScsHQgA5t7CpZjfcy-4eMuR3R8ofNyVnYWeBbmk"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center bg-accent text-accent-foreground px-8 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
           >
-            Enroll Now — ₹999
+            Enroll Now
           </a>
           <a
             href="#program-structure"

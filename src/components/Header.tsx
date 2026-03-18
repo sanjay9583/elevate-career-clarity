@@ -22,10 +22,9 @@ const Header = () => {
           <a href="#bootcamp-overview" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Overview</a>
           <a href="#speakers" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Speakers</a>
           <a href="#about" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">About</a>
-          <a href="#pricing" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">Pricing</a>
           <a href="#faqs" className="text-sm tracking-wide text-muted-foreground hover:text-foreground transition-colors">FAQs</a>
           <a
-            href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+            href="https://forms.zohopublic.in/saimaneash437gm1/form/PaymentForm/formperma/KvnhScsHQgA5t7CpZjfcy-4eMuR3R8ofNyVnYWeBbmk"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-accent text-accent-foreground px-6 py-2.5 text-sm font-medium tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-md"

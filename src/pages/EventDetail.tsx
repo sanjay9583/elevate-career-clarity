@@ -178,12 +178,12 @@ const EventDetail = () => {
                         Our next bootcamp cohort is opening soon. Be among the first to know.
                     </p>
                     <a
-                        href="https://forms.gle/uqTx7bwPZc4YFaGC8"
+                        href="https://forms.zohopublic.in/saimaneash437gm1/form/PaymentForm/formperma/KvnhScsHQgA5t7CpZjfcy-4eMuR3R8ofNyVnYWeBbmk"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center justify-center bg-accent text-accent-foreground px-10 py-4 text-sm font-semibold tracking-wide rounded-full hover:opacity-90 transition-all hover:shadow-lg"
                     >
-                        Enroll Now — ₹999
+                        Enroll Now
                     </a>
                 </div>
             </section>
